@@ -46,7 +46,7 @@ class Game extends Core {
   _addFood(food) {
     let allFoods = Object.values(this.stateManager.getEntities()).filter(food => food.type === 'food');
 
-    if (allFoods.length < 200) {
+    if (allFoods.length < 100) {
       console.log('Food add to game!', food.id)
       this.stateManager.addEntity(food)
     }

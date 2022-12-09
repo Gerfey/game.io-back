@@ -16,7 +16,7 @@ class Player extends Entity {
     this.type = 'player';
 
     this.radius = new RadiusEntity(25, 10)
-    this.mass = new MassEntity(0.2, 13, 0.0005, 0.5)
+    this.mass = new MassEntity(0.2, 8, 0.0005, 0.5)
     this.speed = new SpeedEntity(50, 150, 0)
     this.score = new ScoreEntity(0.25, 0.25, 0)
 
