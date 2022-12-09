@@ -22,14 +22,15 @@ class Game extends Core {
 
     let entities = this.stateManager.getEntities()
 
-    Object.values(entities).forEach(entity => {
+    let players = Object.values(entities).filter(entity => entity.type === 'player');
+
+    players.forEach(entity => {
       const touchEntities = collisionInteractionWithEntity(entity, Object.values(entities))
 
       Object.values(touchEntities).forEach(touchEntity => {
         EventBus.emit(EventMessage.TRIGGER.ENTER, entity, touchEntity)
       })
     })
-
 
     SocketMessageGenerator.creatingMessageTheFront(
       this.stateManager.getSockets(),
